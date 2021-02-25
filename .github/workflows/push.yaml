@@ -2,8 +2,6 @@ name: Publish to docker hub
 
 on:
   push:
-    branches-ignore:
-      - trunk
 
 jobs:
   buildContainer:
