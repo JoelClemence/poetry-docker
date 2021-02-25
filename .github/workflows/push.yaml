@@ -33,11 +33,11 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       -
-        name: Build and push
+        name: Build
         uses: docker/build-action@v2
         with:
           context: .
-          push: true
+          push: "false"
           tags: "joelclemence/poetry:${{ "joelclemence/poetry:${{ matrix.tag }}"
           build-args: |
             POETRY_VERSION=${{matrix.poetryVersion}}
