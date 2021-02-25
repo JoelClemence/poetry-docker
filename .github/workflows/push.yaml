@@ -34,8 +34,8 @@ jobs:
       - name: Build
         uses: docker/build-action@v2
         with:
-          context: "."
-          tags: "joelclemence/poetry:${{ "joelclemence/poetry:${{ matrix.tag }}"
+          context: .
+          tags: "joelclemence/poetry:${{ matrix.tag }}"
           build-args: |
             POETRY_VERSION=${{matrix.poetryVersion}}
             PYTHON_VERSION=${{matrix.pythonVersion}}
