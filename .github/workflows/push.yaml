@@ -1,0 +1,41 @@
+name: CI checks on Push
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  buildContainer:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - tag: LATEST
+            pythonVersion: 3.9.1
+            poetryVersion: 1.1.4
+          - tag: py3.9-1.1.4
+            pythonVersion: 3.9.1
+            poetryVersion: 1.1.4
+          - tag: py3.8-1.1.4
+            pythonVersion: 3.8.6
+            poetryVersion: 1.1.4
+          - tag: py3.7-1.1.4
+            pythonVersion: 3.7.9
+            poetryVersion: 1.1.4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Build
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          tags: "joelclemence/poetry:${{ matrix.tag }}"
+          build-args: |
+            POETRY_VERSION=${{matrix.poetryVersion}}
+            PYTHON_VERSION=${{matrix.pythonVersion}}
