@@ -1,4 +1,4 @@
-name: Publish to docker hub
+name: CI checks on Push
 
 on:
   push:
