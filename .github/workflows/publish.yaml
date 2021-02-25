@@ -50,6 +50,10 @@ jobs:
           build-args: |
             POETRY_VERSION=${{matrix.poetryVersion}}
             PYTHON_VERSION=${{matrix.pythonVersion}}
+  
+  publishReadme:
+    runs-on: ubuntu-latest
+    steps:
       - 
         name: Publish readme
         uses: peter-evans/dockerhub-description@v2
