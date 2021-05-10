@@ -14,7 +14,7 @@ jobs:
         include:
           - tag: LATEST
             pythonVersion: 3.9.1
-            poetryVersion: 1.1.4
+            poetryVersion: 1.1.6
           - tag: py3.9-1.1.4
             pythonVersion: 3.9.1
             poetryVersion: 1.1.4
@@ -24,6 +24,18 @@ jobs:
           - tag: py3.7-1.1.4
             pythonVersion: 3.7.9
             poetryVersion: 1.1.4
+          - tag: py3.9-1.1.6
+            pythonVersion: 3.9.1
+            poetryVersion: 1.1.6
+          - tag: py3.8-1.1.6
+            pythonVersion: 3.8.6
+            poetryVersion: 1.1.6
+          - tag: py3.7-1.1.6
+            pythonVersion: 3.7.9
+            poetryVersion: 1.1.6
+          - tag: py3.6-1.1.6
+            pythonVersion: 3.6.13
+            poetryVersion: 1.1.6
     steps:
       -
         name: Checkout
