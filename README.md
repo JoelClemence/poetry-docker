@@ -21,6 +21,6 @@ Available tags:
 $ docker pull joelclemence/poetry:LATEST
 ...
 
-$ docker run -it --rm joelclemence/poetry --version
-Poetry version 1.1.4
+$ docker run -it --rm joelclemence/poetry:LATEST --version
+Poetry version 1.1.6
 ```
